@@ -127,7 +127,7 @@ new Modal({
             const createdChannel = await interaction.guild.channels.create({
                 name: channelName,
                 type: ChannelType.GuildText,
-                parent: '1201674051765161984',
+                parent: `${settings.server.farmCategory}`,
                 topic: interaction.user.id,
                 permissionOverwrites: [
                     {
