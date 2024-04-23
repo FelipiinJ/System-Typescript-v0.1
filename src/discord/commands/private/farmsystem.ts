@@ -38,21 +38,21 @@ new Command({
             } else {
 
                 const embed = createEmbed({
-                    color: settings.colors.primary,
+                    color: settings.colors.default,
                     description: `Sistema ativado com sucesso!\nCanal selecionado: ${channel}`,
                     footer: {
-                        text: `™ System © All rights reserved`,
+                        text: `™ ${settings.server.name} © All rights reserved`,
                         iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                     }
                 });
 
                 const embedfarm = createEmbed({
-                    color: settings.colors.primary,
+                    color: settings.colors.default,
                     title: `**SISTEMA DE FARM**`,
                     thumbnail: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&",
                     description: `Gerencie os farms dos  membros da facção, utilizando os botões abaixo. #BOPEGGPKRL`,
                     footer: {
-                        text: `™ System © All rights reserved`,
+                        text: `™ ${settings.server.name} © All rights reserved`,
                         iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                     }
                 });
@@ -149,15 +149,15 @@ new Component({
             }
 
             const confirmationMessage = createEmbed({
-                color: settings.colors.primary,
+                color: settings.colors.default,
                 author: {
-                    name: "System | Sistema de Farm",
+                    name: `${settings.server.name} | Sistema de Farm`,
                     iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                 },
                 title: " Requisição de Finalização.",
                 description: `Você tem certeza que quer finalizar o farm semanal ?`,
                 footer: {
-                    text: `™ System © All rights reserved`,
+                    text: `™ ${settings.server.name} © All rights reserved`,
                     iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                 }
             });
@@ -210,9 +210,9 @@ new Component({
 
                         const sendEmbed = async (info: string[], name: string) => {
                             const logMessage = createEmbed({
-                                color: settings.colors.primary,
+                                color: settings.colors.success,
                                 author: {
-                                    name: "System | Sistema de Farm",
+                                    name: `${settings.server.name} | Sistema de Farm`,
                                     iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                                 },
                                 title: `RELATÓRIO SEMANAL  \nRelatório finalizado em: ${formattedTime}\n`,
@@ -223,7 +223,7 @@ new Component({
                                 }
                             });
 
-                            const channelId = "1192719836736933899";
+                            const channelId = `${settings.server.finishFarmReport}`;
 
                             const logChannel = interaction.guild.channels.cache.get(channelId) as TextChannel;
 
@@ -262,15 +262,15 @@ new Component({
                         await Member.updateMany({}, { farm1: 0, farm2: 0, farm3: 0, farm4: 0 });
 
                         const confirmMessage = createEmbed({
-                            color: settings.colors.primary,
+                            color: settings.colors.success,
                             author: {
-                                name: "System | Sistema de Farm",
+                                name: `${settings.server.name} | Sistema de Farm`,
                                 iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                             },
                             title: "Farm Finalizado com Sucesso.",
                             description: `Uma log completa foi enviada para o canal <#1198035365890625546>. Confira lá para mais detalhes.`,
                             footer: {
-                                text: `™ System © All rights reserved`,
+                                text: `™ ${settings.server.name} © All rights reserved`,
                                 iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                             }
                         });
@@ -280,15 +280,15 @@ new Component({
                     } else if (i.customId === 'cancel/finish/farm') {
 
                         const cancelMessage = createEmbed({
-                            color: settings.colors.primary,
+                            color: settings.colors.danger,
                             author: {
-                                name: "System | Sistema de Farm",
+                                name: `${settings.server.name} | Sistema de Farm`,
                                 iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                             },
                             title: "Farm não foi finalizado.",
                             description: `O Farm não foi finalizado, caro queira finalizar basta clicar no botão "Confirmar" da proxima vez.`,
                             footer: {
-                                text: `™ System © All rights reserved`,
+                                text: `™ ${settings.server.name} © All rights reserved`,
                                 iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                             }
                         });

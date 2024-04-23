@@ -88,16 +88,16 @@ new Modal({
         if (!isValidUrl(sendpicture)) {
 
             const invalidUrlMessage = createEmbed({
-                color: settings.colors.primary,
+                color: settings.colors.danger,
                 author: {
-                    name: "System | Sistema de Farm",
+                    name: `${settings.server.name} | Sistema de Farm`,
                     iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                 },
                 title: "**Dados do Usuário**",
                 description: `A URL fornecida para a imagem não é válida.`,
 
                 footer: {
-                    text: `™ System © All rights reserved`,
+                    text: `™ ${settings.server.name} © All rights reserved`,
                     iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                 }
             });
@@ -115,7 +115,7 @@ new Modal({
 
         const channelName = `farm-${interaction.user.username}`;
 
-        const logChannelId = "1188869900870094919";
+        const logChannelId = `${settings.server.sendFarmReport}`;
 
         const collectorsArray: InteractionCollector<StringSelectMenuInteraction<CacheType> | UserSelectMenuInteraction<CacheType> | RoleSelectMenuInteraction<CacheType> | MentionableSelectMenuInteraction<CacheType> | ChannelSelectMenuInteraction<CacheType> | ButtonInteraction<CacheType>>[] = [];
 
@@ -150,9 +150,9 @@ new Modal({
             }
 
             const embedsource = createEmbed({
-                color: settings.colors.primary,
+                color: settings.colors.default,
                 author: {
-                    name: "System | Sistema de Farm",
+                    name: `${settings.server.name} | Sistema de Farm`,
                     iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                 },
                 title: "Registro de Farm Enviado.",
@@ -160,7 +160,7 @@ new Modal({
                     `Seus registros de farm foram enviados. Aguarde a resposta de algum responsável.`,
 
                 footer: {
-                    text: `™ System © All rights reserved`,
+                    text: `™ ${settings.server.name} © All rights reserved`,
                     iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                 }
             });
@@ -171,9 +171,9 @@ new Modal({
 
 
             const embed = createEmbed({
-                color: settings.colors.primary,
+                color: settings.colors.default,
                 author: {
-                    name: "System | Sistema de Farm",
+                    name: `${settings.server.name} | Sistema de Farm`,
                     iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                 },
                 thumbnail: interaction.user?.displayAvatarURL({ size: 4096 }),
@@ -252,9 +252,9 @@ new Modal({
                         }
 
                         const confirmMessage = createEmbed({
-                            color: settings.colors.primary,
+                            color: settings.colors.success,
                             author: {
-                                name: "System | Sistema de Farm",
+                                name: `${settings.server.name} | Sistema de Farm`,
                                 iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                             },
                             thumbnail: interaction.user?.displayAvatarURL({ size: 4096 }),
@@ -281,9 +281,9 @@ new Modal({
                         if (interaction.user.dmChannel) {
                             try {
                                 const embedInDM = createEmbed({
-                                    color: settings.colors.primary,
+                                    color: settings.colors.success,
                                     author: {
-                                        name: "System | Sistema de Farm",
+                                        name: `${settings.server.name} | Sistema de Farm`,
                                         iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                                     },
                                     thumbnail: interaction.user?.displayAvatarURL({ size: 4096 }),
@@ -293,7 +293,7 @@ new Modal({
                                         `Farm confirmado pelo: <@${i.user.id}>`,
                                     image: sendpicture,
                                     footer: {
-                                        text: `™ System © All rights reserved`,
+                                        text: `™ ${settings.server.name} © All rights reserved`,
                                         iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                                     }
                                 });
@@ -343,9 +343,9 @@ new Modal({
                     if (i.customId === 'declineSend') {
 
                         const declineMessage = createEmbed({
-                            color: settings.colors.primary,
+                            color: settings.colors.danger,
                             author: {
-                                name: "System | Sistema de Farm",
+                                name: `${settings.server.name} | Sistema de Farm`,
                                 iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                             },
                             thumbnail: interaction.user?.displayAvatarURL({ size: 4096 }),
@@ -373,9 +373,9 @@ new Modal({
                             try {
 
                                 const embedInDM = createEmbed({
-                                    color: settings.colors.primary,
+                                    color: settings.colors.danger,
                                     author: {
-                                        name: "System | Sistema de Farm",
+                                        name: `${settings.server.name} | Sistema de Farm`,
                                         iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                                     },
                                     thumbnail: interaction.user?.displayAvatarURL({ size: 4096 }),
@@ -385,7 +385,7 @@ new Modal({
                                         `Farm recusado pelo(a): <@${i.user.id}>`,
                                     image: sendpicture,
                                     footer: {
-                                        text: `™ System © All rights reserved`,
+                                        text: `™ ${settings.server.name} © All rights reserved`,
                                         iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                                     }
                                 });

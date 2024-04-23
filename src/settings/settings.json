@@ -1,6 +1,6 @@
 {
   "colors": {
-    "default": "#2B2D31",
+    "default": "#2E5331",
     "primary": "#3b82f6",
     "secondary": "#4f545c",
     "success": "#22c55e",
@@ -16,6 +16,13 @@
     "brilliance": "#f07d5f",
     "nitro": "#ff6bfa",
     "bravery": "#9c84ef"
+  },
+  "server": {
+    "name": "BOPEGG",
+    "permission": "1232186599379566693",
+    "farmCategory": "1231823522460860426",
+    "sendFarmReport": "1232185623964553257",
+    "finishFarmReport": "1232185556528533544"
   },
   "farmitens": {
     "item1": "Dinheiro",

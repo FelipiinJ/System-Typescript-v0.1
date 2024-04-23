@@ -96,15 +96,15 @@ new Modal({
             ]);
 
             const embed = createEmbed({
-                color: settings.colors.primary,
+                color: settings.colors.default,
                 author: {
-                    name: "System | Sistema de Farm",
+                    name: `${settings.server.name} | Sistema de Farm`,
                     iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                 },
                 title: "Metas Semanais Definidas.",
                 description: `As metas semanais foram definidas para todos os Cargos.`,
                 footer: {
-                    text: `™ System © All rights reserved`,
+                    text: `™ ${settings.server.name} © All rights reserved`,
                     iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                 }
             });

@@ -10,12 +10,12 @@ const foldername = basename(join(import.meta.dirname, "../../"));
 
 const status = [
 	{
-		name: "System TypeScript v0.1",
+		name: "™ BOPEGG",
 		type: ActivityType.Playing,
 
 	},
 	{
-		name: "System TypeScript v0.1",
+		name: "™ BOPEGG",
 		type: ActivityType.Streaming,
 		url: "https://www.twitch.tv/felipiinrp",
 	},
