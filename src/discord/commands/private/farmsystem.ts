@@ -27,7 +27,7 @@ new Command({
 
     async run(interaction) {
 
-        if (!interaction.member.roles.cache.has("1195203019114041475")) {
+        if (!interaction.member.roles.cache.has(`${settings.server.permission}`)) {
             interaction.reply({ ephemeral, content: "Você não possui permissão para usar este comando" })
         } else {
 
