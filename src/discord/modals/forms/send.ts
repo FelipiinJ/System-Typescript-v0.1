@@ -135,7 +135,7 @@ new Modal({
                         deny: ["ViewChannel"],
                     },
                     {
-                        id: '1195203019114041475',
+                        id: `${settings.server.permission}`,
                         allow: ["ViewChannel"],
                     },
                 ],
