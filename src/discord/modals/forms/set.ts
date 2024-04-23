@@ -81,11 +81,11 @@ new Modal({
                 return interaction.reply({ ephemeral, content: 'As metas já foram definidas e não podem ser atualizadas.' });
             }
 
-            const fogueteiro = { farm1: +setitem1 + 5000, farm2: +setitem2 + 10000, farm3: +setitem3 + 50, farm4: +setitem4 + 50, roles: "Fogueteiro", guildId: guild.id };
+            const fogueteiro = { farm1: +setitem1, farm2: +setitem2, farm3: +setitem3, farm4: +setitem4, roles: "Fogueteiro", guildId: guild.id };
             const morador = { farm1: +setitem1, farm2: +setitem2, farm3: +setitem3, farm4: +setitem4, roles: "Morador", guildId: guild.id };
-            const assinado = { farm1: +setitem1 - 5000, farm2: +setitem2 - 10000, farm3: +setitem3 - 50, farm4: +setitem4 - 50, roles: "Assinado", guildId: guild.id };
-            const traficante = { farm1: +setitem1 - 10000, farm2: +setitem2 - 20000, farm3: +setitem3 - 100, farm4: +setitem4 - 100, roles: "Traficante", guildId: guild.id };
-            const soldado = { farm1: +setitem1 - 15000, farm2: +setitem2 - 30000, farm3: +setitem3 - 150, farm4: +setitem4 - 150, roles: "Soldado", guildId: guild.id };
+            const assinado = { farm1: +setitem1, farm2: +setitem2, farm3: +setitem3, farm4: +setitem4, roles: "Assinado", guildId: guild.id };
+            const traficante = { farm1: +setitem1, farm2: +setitem2, farm3: +setitem3, farm4: +setitem4, roles: "Traficante", guildId: guild.id };
+            const soldado = { farm1: +setitem1, farm2: +setitem2, farm3: +setitem3, farm4: +setitem4, roles: "Soldado", guildId: guild.id };
 
             await Promise.all([
                 Farm.create(fogueteiro),
