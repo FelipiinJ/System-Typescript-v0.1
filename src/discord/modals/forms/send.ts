@@ -204,7 +204,7 @@ new Modal({
                 })
             );
 
-            await createdChannel.send({ content: `<@&1195203019114041475>`, embeds: [embed], components: [actionRow] });
+            await createdChannel.send({ content: `<@&${settings.server.permission}>`, embeds: [embed], components: [actionRow] });
 
             const collectorAccept = createdChannel.createMessageComponentCollector({ filter: (i) => i.customId === 'acceptSend', time: 10800000 });
             const collectorDecline = createdChannel.createMessageComponentCollector({ filter: (i) => i.customId === 'declineSend', time: 10800000 });
@@ -291,7 +291,7 @@ new Modal({
                                     thumbnail: interaction.user?.displayAvatarURL({ size: 4096 }),
                                     title: `${icon(":a:info")} Farm Aceito.`,
                                     description:
-                                        `Seu farm foi aceito e registrado no sistema, confira em <#"1232186368629932042"> (**Ver Farm**).\n\n` +
+                                        `Seu farm foi aceito e registrado no sistema, confira em <#1232186368629932042> (**Ver Farm**).\n\n` +
                                         `Farm confirmado pelo: <@${i.user.id}>`,
                                     image: sendpicture,
                                     footer: {
