@@ -155,7 +155,7 @@ new Modal({
                     name: `${settings.server.name} | Sistema de Farm`,
                     iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                 },
-                title: `${icon("bopereport")} Registro de Farm Enviado.`,
+                title: `${icon(":a:info")} Registro de Farm Enviado.`,
                 description: '\n' +
                     `Seus registros de farm foram enviados. Aguarde a resposta de algum responsável.`,
 
@@ -177,7 +177,7 @@ new Modal({
                     iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                 },
                 thumbnail: interaction.user?.displayAvatarURL({ size: 4096 }),
-                title: `${icon("bopereport")} Registro de Farm Enviado.`,
+                title: `${icon(":a:info")} Registro de Farm Enviado.`,
                 description:
                     `${icon(":a:setabope")} **Usuário:** <@${interaction.user.id}> solicitou a entrega do Farm.\n\n` +
                     `${icon(":a:setabope")} **${settings.farmitens.item1}:**\n \`${senditem1}\`\n` +
@@ -259,7 +259,7 @@ new Modal({
                                 iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                             },
                             thumbnail: interaction.user?.displayAvatarURL({ size: 4096 }),
-                            title: `${icon("bopereport")} Registro de Farm Aceito.`,
+                            title: `${icon(":a:info")} Registro de Farm Aceito.`,
                             description:
                                 `${icon(":a:setabope")} **Usuário:** <@${interaction.user.id}> Farm entregue.\n\n` +
                                 `${icon(":a:setabope")} **${settings.farmitens.item1}:**\n \`${senditem1}\`\n` +
@@ -289,7 +289,7 @@ new Modal({
                                         iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                                     },
                                     thumbnail: interaction.user?.displayAvatarURL({ size: 4096 }),
-                                    title: `${icon("bopereport")} Farm Aceito.`,
+                                    title: `${icon(":a:info")} Farm Aceito.`,
                                     description:
                                         `Seu farm foi aceito e registrado no sistema, confira em <#"1232186368629932042"> (**Ver Farm**).\n\n` +
                                         `Farm confirmado pelo: <@${i.user.id}>`,
@@ -351,7 +351,7 @@ new Modal({
                                 iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                             },
                             thumbnail: interaction.user?.displayAvatarURL({ size: 4096 }),
-                            title: `${icon("bopereport")} Registro de Farm Recusado.`,
+                            title: `${icon(":a:info")} Registro de Farm Recusado.`,
                             description:
                                 `${icon(":a:setabope")} **Usuário:** <@${interaction.user.id}> Tentativa de entrega.\n\n` +
                                 `${icon(":a:setabope")} **${settings.farmitens.item1}:**\n \`${senditem1}\`\n` +
@@ -382,7 +382,7 @@ new Modal({
                                         iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                                     },
                                     thumbnail: interaction.user?.displayAvatarURL({ size: 4096 }),
-                                    title: `${icon("bopereport")} Farm Recusado.`,
+                                    title: `${icon(":a:info")} Farm Recusado.`,
                                     description:
                                         `Seu farm foi recusado, confira as informações e refaça o envio.\n\n` +
                                         `Farm recusado pelo(a): <@${i.user.id}>`,

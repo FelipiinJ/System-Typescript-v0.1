@@ -114,7 +114,7 @@ new Component({
                     name: `${settings.server.name} | Sistema de Farm`,
                     iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                 },
-                title: `${icon("bopereport")} **Dados do Seu Farm**`,
+                title: `${icon(":a:info")} **Dados do Seu Farm**`,
                 description: `
                 ${icon(":a:setabope")} **Nome:** \`${memberInfo.namefarm}\`
                 ${icon(":a:setabope")} **Discord:** \`${memberInfo.discordid}\`

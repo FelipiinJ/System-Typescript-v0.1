@@ -154,7 +154,7 @@ new Component({
                     name: `${settings.server.name} | Sistema de Farm`,
                     iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                 },
-                title: `${icon("bopereport")} Requisição de Finalização.`,
+                title: `${icon(":a:info")} Requisição de Finalização.`,
                 description: `Você tem certeza que quer finalizar o farm semanal ?`,
                 footer: {
                     text: `™ ${settings.server.name} © All rights reserved`,
@@ -215,7 +215,7 @@ new Component({
                                     name: `${settings.server.name} | Sistema de Farm`,
                                     iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                                 },
-                                title: `${icon("bopereport")} RELATÓRIO SEMANAL ${icon("bopereport")} \nRelatório finalizado em: ${formattedTime}\n`,
+                                title: `${icon(":a:info")} RELATÓRIO SEMANAL ${icon(":a:info")} \nRelatório finalizado em: ${formattedTime}\n`,
                                 description: `${icon(":a:setabope")} **${name}**\n${info.join('\n')}`,
                                 footer: {
                                     text: `Relatório finalizado por: ${interaction.user.tag}`,
@@ -267,7 +267,7 @@ new Component({
                                 name: `${settings.server.name} | Sistema de Farm`,
                                 iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                             },
-                            title: `${icon("bopereport")} Farm Finalizado com Sucesso.`,
+                            title: `${icon(":a:info")} Farm Finalizado com Sucesso.`,
                             description: `Uma log completa foi enviada para o canal <#${settings.server.sendFarmReport}>. Confira lá para mais detalhes.`,
                             footer: {
                                 text: `™ ${settings.server.name} © All rights reserved`,
@@ -285,7 +285,7 @@ new Component({
                                 name: `${settings.server.name} | Sistema de Farm`,
                                 iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                             },
-                            title: `${icon("bopereport")} Farm não foi finalizado.`,
+                            title: `${icon(":a:info")} Farm não foi finalizado.`,
                             description: `O Farm não foi finalizado, caro queira finalizar basta clicar no botão "Confirmar" da proxima vez.`,
                             footer: {
                                 text: `™ ${settings.server.name} © All rights reserved`,
