@@ -1,5 +1,5 @@
 import { Command, Component } from "#base";
-import { getFormattedTime, splitArrayIntoChunks } from "#functions";
+import { getFormattedTime, icon, splitArrayIntoChunks } from "#functions";
 import { settings } from "#settings";
 import { createEmbed, createRow } from "@magicyan/discord";
 import { farmSchema } from "database/schemas/farm.js";
@@ -145,7 +145,7 @@ new Component({
             const farmRows = await Farm.find();
 
             if (farmRows.length === 0) {
-                return interaction.reply({ content: '❌ Por favor, defina as metas semanais antes de tentar finalizar o farm.', ephemeral: true });
+                return interaction.reply({ ephemeral, content: `${icon(":a:load")} Por favor, defina as metas semanais antes de tentar finalizar o farm.` });
             }
 
             const confirmationMessage = createEmbed({
@@ -154,7 +154,7 @@ new Component({
                     name: `${settings.server.name} | Sistema de Farm`,
                     iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                 },
-                title: " Requisição de Finalização.",
+                title: `${icon("bopereport")} Requisição de Finalização.`,
                 description: `Você tem certeza que quer finalizar o farm semanal ?`,
                 footer: {
                     text: `™ ${settings.server.name} © All rights reserved`,
@@ -175,7 +175,7 @@ new Component({
                 })
             );
 
-            await interaction.reply({ embeds: [confirmationMessage], components: [buttonRow], ephemeral: true });
+            await interaction.reply({ ephemeral, embeds: [confirmationMessage], components: [buttonRow] });
 
             const filter = (i: any) => i.customId === 'confirm/finish/farm' || i.customId === 'cancel/finish/farm';
 
@@ -200,23 +200,23 @@ new Component({
                         const membersList = members.filter((member: any) => member.rolefac === 'Morador');
                         const scouts = members.filter((member: any) => member.rolefac === 'Fogueteiro');
 
-                        const soldiers2Info = soldiers2.map((member: any) => `**Nome:** \`${member.namefarm}\` **Farm:** \`${member.status}\` ${member.status === 'INCOMPLETO' ? '❌' : '✅'}`);
-                        const gerentesInfo = gerentes.map((member: any) => `**Nome:** \`${member.namefarm}\` **Farm:** \`${member.status}\` ${member.status === 'INCOMPLETO' ? '❌' : '✅'}`);
-                        const soldiersInfo = soldiers.map((member: any) => `**Nome:** \`${member.namefarm}\` **Farm:** \`${member.status}\` ${member.status === 'INCOMPLETO' ? '❌' : '✅'}`);
-                        const membersInfo = membersList.map((member: any) => `**Nome:** \`${member.namefarm}\` **Farm:** \`${member.status}\` ${member.status === 'INCOMPLETO' ? '❌' : '✅'}`);
-                        const scoutsInfo = scouts.map((member: any) => `**Nome:** \`${member.namefarm}\` **Farm:** \`${member.status}\` ${member.status === 'INCOMPLETO' ? '❌' : '✅'}`);
+                        const soldiers2Info = soldiers2.map((member: any) => `**Nome:** \`${member.namefarm}\` **Farm:** \`${member.status}\` ${member.status === 'Incompleto' ? `${icon(":a:load")}` : `${icon(":a:verifypurple")}`}`);
+                        const gerentesInfo = gerentes.map((member: any) => `**Nome:** \`${member.namefarm}\` **Farm:** \`${member.status}\` ${member.status === 'Incompleto' ? `${icon(":a:load")}` : `${icon(":a:verifypurple")}`}`);
+                        const soldiersInfo = soldiers.map((member: any) => `**Nome:** \`${member.namefarm}\` **Farm:** \`${member.status}\` ${member.status === 'Incompleto' ? `${icon(":a:load")}` : `${icon(":a:verifypurple")}`}`);
+                        const membersInfo = membersList.map((member: any) => `**Nome:** \`${member.namefarm}\` **Farm:** \`${member.status}\` ${member.status === 'Incompleto' ? `${icon(":a:load")}` : `${icon(":a:verifypurple")}`}`);
+                        const scoutsInfo = scouts.map((member: any) => `**Nome:** \`${member.namefarm}\` **Farm:** \`${member.status}\` ${member.status === 'Incompleto' ? `${icon(":a:load")}` : `${icon(":a:verifypurple")}`}`);
 
                         const formattedTime = getFormattedTime();
 
                         const sendEmbed = async (info: string[], name: string) => {
                             const logMessage = createEmbed({
-                                color: settings.colors.success,
+                                color: settings.colors.default,
                                 author: {
                                     name: `${settings.server.name} | Sistema de Farm`,
                                     iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                                 },
-                                title: `RELATÓRIO SEMANAL  \nRelatório finalizado em: ${formattedTime}\n`,
-                                description: `**${name}**\n${info.join('\n')}`,
+                                title: `${icon("bopereport")} RELATÓRIO SEMANAL ${icon("bopereport")} \nRelatório finalizado em: ${formattedTime}\n`,
+                                description: `${icon(":a:setabope")} **${name}**\n${info.join('\n')}`,
                                 footer: {
                                     text: `Relatório finalizado por: ${interaction.user.tag}`,
                                     iconURL: interaction.user.displayAvatarURL()
@@ -258,7 +258,7 @@ new Component({
                         }
 
                         await Farm.deleteMany({});
-                        await Member.updateMany({ status: 'INCOMPLETO' });
+                        await Member.updateMany({ status: 'Incompleto' });
                         await Member.updateMany({}, { farm1: 0, farm2: 0, farm3: 0, farm4: 0 });
 
                         const confirmMessage = createEmbed({
@@ -267,8 +267,8 @@ new Component({
                                 name: `${settings.server.name} | Sistema de Farm`,
                                 iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                             },
-                            title: "Farm Finalizado com Sucesso.",
-                            description: `Uma log completa foi enviada para o canal <#1198035365890625546>. Confira lá para mais detalhes.`,
+                            title: `${icon("bopereport")} Farm Finalizado com Sucesso.`,
+                            description: `Uma log completa foi enviada para o canal <#${settings.server.sendFarmReport}>. Confira lá para mais detalhes.`,
                             footer: {
                                 text: `™ ${settings.server.name} © All rights reserved`,
                                 iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
@@ -285,7 +285,7 @@ new Component({
                                 name: `${settings.server.name} | Sistema de Farm`,
                                 iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                             },
-                            title: "Farm não foi finalizado.",
+                            title: `${icon("bopereport")} Farm não foi finalizado.`,
                             description: `O Farm não foi finalizado, caro queira finalizar basta clicar no botão "Confirmar" da proxima vez.`,
                             footer: {
                                 text: `™ ${settings.server.name} © All rights reserved`,

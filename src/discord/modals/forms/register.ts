@@ -101,7 +101,7 @@ new Modal({
                 farm2: 0,
                 farm3: 0,
                 farm4: 0,
-                status: 'INCOMPLETO',
+                status: 'Incompleto',
                 guildId: guild.id
             });
 

@@ -1,5 +1,5 @@
 import { Modal } from "#base";
-import { isNumeric } from "#functions";
+import { icon, isNumeric } from "#functions";
 import { settings } from "#settings";
 import { createEmbed, createModalInput } from "@magicyan/discord";
 import { farmSchema } from "database/schemas/farm.js";
@@ -48,7 +48,7 @@ new Modal({
             const memberInfo = await Member.findOne({ idfarm: searchmember }).exec();
 
             if (!memberInfo) {
-                return interaction.reply({ ephemeral, content: '❌ Membro não encontrado.' });
+                return interaction.reply({ ephemeral, content: `${icon(":a:load")} Membro não encontrado.` });
             }
 
             const userRole = memberInfo.rolefac;
@@ -56,7 +56,7 @@ new Modal({
             const farmInfo = await Farm.findOne({ roles: userRole }).exec();
 
             if (!farmInfo) {
-                return interaction.reply({ ephemeral, content: '❌ Por favor, defina as metas semanais antes de buscar as informações.' });
+                return interaction.reply({ ephemeral, content: `${icon(":a:load")} Por favor, defina as metas semanais antes de buscar as informações.` });
             }
 
             const embed = createEmbed({
@@ -65,17 +65,17 @@ new Modal({
                     name: `${settings.server.name} | Sistema de Farm`,
                     iconURL: "https://cdn.discordapp.com/attachments/1196698774676963368/1196698805119229982/Gif-Bopegg-PVP.gif?ex=65b8939c&is=65a61e9c&hm=d799877fe632f4eef4401252bbffeffc53c8130ffe588c7a5776647114cd489d&"
                 },
-                title: "**Dados do Usuário**",
+                title: `${icon("bopereport")} **Dados do Usuário**`,
                 description: `
-                **Nome:** \`${memberInfo.namefarm}\`
-                **Discord:** \`${memberInfo.discordid}\`
-                **Passaporte:** \`${memberInfo.idfarm}\`
-                **Cargo:** \`${memberInfo.rolefac}\`
-                **${settings.farmitens.item1}:** \`${memberInfo.farm1}/${farmInfo.farm1}\`
-            	**${settings.farmitens.item2}:** \`${memberInfo.farm2}/${farmInfo.farm2}\`
-                **${settings.farmitens.item3}:** \`${memberInfo.farm3}/${farmInfo.farm3}\`
-                **${settings.farmitens.item4}:** \`${memberInfo.farm4}/${farmInfo.farm4}\`
-                **Status:** \`${memberInfo.status}\` ${memberInfo.status === 'INCOMPLETO' ? '❌' : '✅'}`,
+                ${icon(":a:setabope")} **Nome:** \`${memberInfo.namefarm}\`
+                ${icon(":a:setabope")} **Discord:** \`${memberInfo.discordid}\`
+                ${icon(":a:setabope")} **Passaporte:** \`${memberInfo.idfarm}\`
+                ${icon(":a:setabope")} **Cargo:** \`${memberInfo.rolefac}\`
+                ${icon(":a:setabope")} **${settings.farmitens.item1}:** \`${memberInfo.farm1}/${farmInfo.farm1}\`
+            	${icon(":a:setabope")} **${settings.farmitens.item2}:** \`${memberInfo.farm2}/${farmInfo.farm2}\`
+                ${icon(":a:setabope")} **${settings.farmitens.item3}:** \`${memberInfo.farm3}/${farmInfo.farm3}\`
+                ${icon(":a:setabope")} **${settings.farmitens.item4}:** \`${memberInfo.farm4}/${farmInfo.farm4}\`
+                ${icon(":a:setabope")} **Status:** \`${memberInfo.status}\` ${memberInfo.status === 'Incompleto' ? `${icon(":a:load")}` : `${icon(":a:verifypurple")}`}`,
 
                 footer: {
                     text: `™ ${settings.server.name} © All rights reserved`,
@@ -87,7 +87,7 @@ new Modal({
 
         } catch (error) {
             console.error('Erro ao buscar informações do membro:', error);
-            await interaction.reply({ ephemeral, content: '❌ Ocorreu um erro ao processar a solicitação.' });
+            await interaction.reply({ ephemeral, content: `${icon(":a:load")} Ocorreu um erro ao processar a solicitação.` });
         }
         return;
     },
