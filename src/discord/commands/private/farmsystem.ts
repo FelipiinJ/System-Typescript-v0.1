@@ -5,6 +5,7 @@ import { createEmbed, createRow } from "@magicyan/discord";
 import { farmSchema } from "database/schemas/farm.js";
 import { memberSchema } from "database/schemas/member.js";
 import { ApplicationCommandOptionType, ApplicationCommandType, ButtonBuilder, ButtonStyle, ChannelType, ComponentType, TextChannel } from "discord.js";
+import { changeFarmModal } from "discord/modals/forms/change.js";
 import { checkFarmModal } from "discord/modals/forms/check.js";
 import { registerFarmModal } from "discord/modals/forms/register.js";
 import { removeFarmModal } from "discord/modals/forms/remove.js";
@@ -77,16 +78,24 @@ new Command({
                         customId: "farm/check",
                         label: "Pesquisar",
                         style: ButtonStyle.Secondary
-                    }),
+                    })
+                );
+
+                const row2 = createRow(
                     new ButtonBuilder({
                         customId: "farm/finish",
                         label: "Finalizar",
+                        style: ButtonStyle.Secondary
+                    }),
+                    new ButtonBuilder({
+                        customId: "farm/change",
+                        label: "Trocar Cargo",
                         style: ButtonStyle.Secondary
                     })
                 );
 
                 interaction.reply({ ephemeral, embeds: [embed], }).then(() => {
-                    channel.send({ embeds: [embedfarm], components: [row] })
+                    channel.send({ embeds: [embedfarm], components: [row, row2] })
                 })
             }
         }
@@ -309,5 +318,15 @@ new Component({
             console.error('Erro ao processar a interação "finishfarm":', error);
         }
         return;
+    },
+});
+
+new Component({
+    customId: "farm/change",
+    type: ComponentType.Button, cache: "cached",
+    async run(interaction) {
+
+        interaction.showModal(changeFarmModal());
+
     },
 });

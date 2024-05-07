@@ -1,5 +1,5 @@
 import { Modal } from "#base";
-import { isNumeric } from "#functions";
+import { formatName, isNumeric } from "#functions";
 import { createModalInput } from "@magicyan/discord";
 import { memberSchema } from "database/schemas/member.js";
 import { ModalBuilder, TextInputStyle } from "discord.js";
@@ -43,16 +43,34 @@ new Modal({
     cache: "cached", isFromMessage: true,
     async run(interaction) {
         const searchmember: string = interaction.fields.getTextInputValue('id/change/farm');
-        const rolemember: string = interaction.fields.getTextInputValue('role/change/farm');
+        const rolemember: string = formatName(interaction.fields.getTextInputValue('role/change/farm'));
 
         if (!isNumeric(searchmember)) {
             return interaction.reply({ ephemeral, content: 'Por favor, insira um número válido.' });
         }
 
+        if (!['fogueteiro', 'morador', 'assinado', 'traficante', 'soldado'].includes(rolemember.toLowerCase())) {
+            interaction.reply({ ephemeral, content: 'O cargo tem que ser: fogueteiro/morador/assinado/traficante/soldado' });
+            return;
+        }
+
         const Member = model('Member', memberSchema);
 
+        try {
 
+            const member = await Member.findOne({ idfarm: parseInt(searchmember) });
 
-        return;
+            if (!member) {
+                return interaction.reply({ ephemeral, content: 'Membro não encontrado.' });
+            }
+
+            member.rolefac = rolemember;
+            await member.save();
+
+            return interaction.reply({ ephemeral, content: 'Cargo atualizado com sucesso.' });
+        } catch (error) {
+            console.error('Erro ao atualizar o cargo do membro:', error);
+            return interaction.reply({ ephemeral, content: 'Ocorreu um erro ao atualizar o cargo.' });
+        }
     },
 });
