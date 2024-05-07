@@ -131,7 +131,7 @@ new Component({
                         },
                         description: `${icon(":a:info")} **SOLDADOS** ${icon(":a:info")}\n\n${subChunk.join('\n')}`,
                         footer: {
-                            text: `Relatório finalizado por: ${interaction.user.tag}`,
+                            text: `Relatório gerado por: ${interaction.user.tag}`,
                             iconURL: interaction.user.displayAvatarURL()
                         }
                     });
@@ -187,7 +187,7 @@ new Component({
                         },
                         description: `${icon(":a:info")} **TRAFICANTES** ${icon(":a:info")}\n\n${subChunk.join('\n')}`,
                         footer: {
-                            text: `Relatório finalizado por: ${interaction.user.tag}`,
+                            text: `Relatório gerado por: ${interaction.user.tag}`,
                             iconURL: interaction.user.displayAvatarURL()
                         }
                     });
@@ -243,7 +243,7 @@ new Component({
                         },
                         description: `${icon(":a:info")} **ASSINADOS** ${icon(":a:info")}\n\n${subChunk.join('\n')}`,
                         footer: {
-                            text: `Relatório finalizado por: ${interaction.user.tag}`,
+                            text: `Relatório gerado por: ${interaction.user.tag}`,
                             iconURL: interaction.user.displayAvatarURL()
                         }
                     });
@@ -299,7 +299,7 @@ new Component({
                         },
                         description: `${icon(":a:info")} **MORADORES** ${icon(":a:info")}\n\n${subChunk.join('\n')}`,
                         footer: {
-                            text: `Relatório finalizado por: ${interaction.user.tag}`,
+                            text: `Relatório gerado por: ${interaction.user.tag}`,
                             iconURL: interaction.user.displayAvatarURL()
                         }
                     });
@@ -355,7 +355,7 @@ new Component({
                         },
                         description: `${icon(":a:info")} **FOGUETEIROS** ${icon(":a:info")}\n\n${subChunk.join('\n')}`,
                         footer: {
-                            text: `Relatório finalizado por: ${interaction.user.tag}`,
+                            text: `Relatório gerado por: ${interaction.user.tag}`,
                             iconURL: interaction.user.displayAvatarURL()
                         }
                     });
