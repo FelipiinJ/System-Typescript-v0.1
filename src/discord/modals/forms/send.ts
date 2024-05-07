@@ -241,12 +241,10 @@ new Modal({
                         for (const member of members) {
                             const farm = await Farm.findOne({ roles: member.rolefac });
 
-                            if (farm &&
-                                member.farm1 >= farm.farm1 &&
-                                member.farm2 >= farm.farm2 &&
+                            if (farm && (member.farm1 >= farm.farm1 || member.farm2 >= farm.farm2) &&
                                 member.farm3 >= farm.farm3 &&
-                                member.farm4 >= farm.farm4) {
-
+                                member.farm4 >= farm.farm4
+                            ) {
                                 member.status = "Completo";
                                 await member.save();
                             }
