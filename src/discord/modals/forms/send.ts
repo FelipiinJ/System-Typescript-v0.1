@@ -85,6 +85,12 @@ new Modal({
             return interaction.reply({ ephemeral, content: 'Por favor, insira apenas valores numéricos.' });
         }
 
+        const memberInfo = await Member.findOne({ discordid: interaction.user.id }).exec();
+
+        if (!memberInfo) {
+            return interaction.reply({ ephemeral, content: `${icon(":a:load")} Você não possui registro no sistema.` });
+        }
+
         if (!isValidImageUrl(sendpicture)) {
 
             const invalidUrlMessage = createEmbed({

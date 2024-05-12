@@ -97,7 +97,7 @@ new Component({
             const memberInfo = await Member.findOne({ discordid: interaction.user.id }).exec();
 
             if (!memberInfo) {
-                return interaction.reply({ ephemeral, content: `${icon(":a:load")} Membro não encontrado.` });
+                return interaction.reply({ ephemeral, content: `${icon(":a:load")} Você não possui registro no sistema.` });
             }
 
             const userRole = memberInfo.rolefac;
