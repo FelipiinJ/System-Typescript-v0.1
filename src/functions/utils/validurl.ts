@@ -10,13 +10,6 @@ export function isValidImageUrl(url: string): boolean {
         return false;
     }
 
-    // Verifica se a extensão do arquivo é uma imagem com uma lista de extensões comuns
-    const imageExtensions = [".png", ".jpg", ".jpeg", ".gif", ".bmp"];
-    const fileExtension = url.substring(url.lastIndexOf(".")).toLowerCase();
-    if (!imageExtensions.includes(fileExtension)) {
-        return false;
-    }
-
     // Verifica se a URL é bem formada
     try {
         new URL(url);
