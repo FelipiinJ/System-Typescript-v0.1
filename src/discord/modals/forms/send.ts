@@ -1,5 +1,5 @@
 import { Modal } from "#base";
-import { getFormattedTime, icon, isNumeric, isValidUrl } from "#functions";
+import { getFormattedTime, icon, isNumeric, isValidImageUrl } from "#functions";
 import { settings } from "#settings";
 import { createEmbed, createModalInput, createRow } from "@magicyan/discord";
 import { farmSchema } from "database/schemas/farm.js";
@@ -85,7 +85,7 @@ new Modal({
             return interaction.reply({ ephemeral, content: 'Por favor, insira apenas valores numéricos.' });
         }
 
-        if (!isValidUrl(sendpicture)) {
+        if (!isValidImageUrl(sendpicture)) {
 
             const invalidUrlMessage = createEmbed({
                 color: settings.colors.danger,
