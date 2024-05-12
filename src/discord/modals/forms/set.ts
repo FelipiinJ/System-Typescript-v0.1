@@ -85,7 +85,7 @@ new Modal({
             const morador = { farm1: +setitem1, farm2: +setitem2, farm3: +setitem3, farm4: +setitem4, roles: "Morador", guildId: guild.id };
             const assinado = { farm1: +setitem1, farm2: +setitem2, farm3: +setitem3 - 25, farm4: +setitem4 - 25, roles: "Assinado", guildId: guild.id };
             const traficante = { farm1: +setitem1 - 20000, farm2: +setitem2 - 50000, farm3: +setitem3 - 50, farm4: +setitem4 - 50, roles: "Traficante", guildId: guild.id };
-            const soldado = { farm1: +setitem1 - 20000, farm2: +setitem2 - 50000, farm3: +setitem3 - 75, farm4: +setitem4 - 75, roles: "Soldado", guildId: guild.id };
+            const soldado = { farm1: +setitem1 - 20000, farm2: +setitem2 - 50000, farm3: +setitem3 - 50, farm4: +setitem4 - 50, roles: "Soldado", guildId: guild.id };
 
             await Promise.all([
                 Farm.create(fogueteiro),
