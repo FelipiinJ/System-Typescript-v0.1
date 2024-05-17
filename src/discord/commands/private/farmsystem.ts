@@ -188,10 +188,7 @@ new Component({
 
             const filter = (i: any) => i.customId === 'confirm/finish/farm' || i.customId === 'cancel/finish/farm';
 
-            const collector = interaction.channel?.createMessageComponentCollector({
-                filter,
-                time: 60000,
-            });
+            const collector = interaction.channel?.createMessageComponentCollector({ filter });
 
             const handleInteraction = async (i: any) => {
                 try {

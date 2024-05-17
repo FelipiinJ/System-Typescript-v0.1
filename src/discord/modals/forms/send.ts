@@ -212,8 +212,8 @@ new Modal({
 
             await createdChannel.send({ content: `<@&${settings.server.permission}>`, embeds: [embed], components: [actionRow] });
 
-            const collectorAccept = createdChannel.createMessageComponentCollector({ filter: (i) => i.customId === 'acceptSend', time: 10800000 });
-            const collectorDecline = createdChannel.createMessageComponentCollector({ filter: (i) => i.customId === 'declineSend', time: 10800000 });
+            const collectorAccept = createdChannel.createMessageComponentCollector({ filter: (i) => i.customId === 'acceptSend' });
+            const collectorDecline = createdChannel.createMessageComponentCollector({ filter: (i) => i.customId === 'declineSend' });
 
             collectorsArray.push(collectorAccept, collectorDecline);
 
