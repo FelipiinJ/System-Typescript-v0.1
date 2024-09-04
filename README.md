@@ -1,7 +1,4 @@
-# Awesome Bot Base
-* [This project was generated using Constatic CLI](https://github.com/rinckodev/constatic)
-
-This is the most complete bot base you've ever seen! Created by [@rinckodev](https://github.com/rinckodev). This project uses typescript to its advantage, using features to create complete structures that facilitate the construction of commands and systems
+# Awesome System Discord TypeScript
 
 > ⚠️ Node version required: 21.5 or higher 
 
